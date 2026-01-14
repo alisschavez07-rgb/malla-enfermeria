@@ -1,64 +1,85 @@
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
   background: #f3e1dc;
-  padding: 25px;
+  padding: 30px;
 }
 
+/* TITULOS */
 h1 {
   text-align: center;
+  font-family: 'Serenity', cursive;
+  font-size: 2.2rem;
+  color: #5a3d5c;
 }
 
+/* CONTADORES */
 #creditos-acumulados,
 #porcentaje-avance {
   text-align: center;
-  font-weight: bold;
-  margin: 10px 0;
+  font-family: 'Tropical Luge', 'Tilt Neon', sans-serif;
+  font-weight: 600;
+  margin: 6px 0;
 }
 
-/* CONTENEDOR GENERAL */
+/* CONTENEDOR */
 .contenedor-ciclos {
   display: flex;
   gap: 25px;
   overflow-x: auto;
-  padding-top: 20px;
+  padding-top: 25px;
 }
 
-/* CADA CICLO */
+/* CICLO */
 .ciclo {
-  min-width: 230px;
+  min-width: 260px;
+  background: #f9e9e4;
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
-/* TITULO CICLO */
 .ciclo h2 {
   text-align: center;
-  margin-bottom: 10px;
+  font-family: 'Serenity', cursive;
+  color: #5a3d5c;
 }
 
-/* LISTA DE CURSOS */
+/* CURSOS */
 .grid {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* CURSO NORMAL */
 .curso {
   background: #f6c1d1;
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: 0.2s;
+  font-family: 'Playwrite CO Guides', cursive;
+  transition: background 0.35s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* CURSO HECHO */
+.curso:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
 .curso.aprobado {
   background: #b79ad8;
+  transform: scale(1.04);
+  box-shadow: 0 8px 18px rgba(90, 61, 92, 0.35);
   text-decoration: line-through;
 }
 
-/* CREDITOS */
 .creditos {
+  font-family: 'Tropical Luge', 'Tilt Neon', sans-serif;
   font-size: 0.75rem;
-  opacity: 0.85;
-  margin-top: 4px;
 }
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .ciclo {
+    min-width: 85vw;
+  }
+}
+
