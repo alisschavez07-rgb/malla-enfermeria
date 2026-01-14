@@ -1,116 +1,64 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #f3e1dc; /* fondo como la foto */
-  padding: 30px;
+  background: #f3e1dc;
+  padding: 25px;
 }
 
-/* Título */
 h1 {
   text-align: center;
-  margin-bottom: 10px;
 }
 
-/* Créditos y porcentaje */
 #creditos-acumulados,
 #porcentaje-avance {
   text-align: center;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin: 10px 0;
 }
 
-/* Ciclos */
-.ciclo {
-  margin-bottom: 35px;
-}
-
-.ciclo h2 {
-  margin-bottom: 15px;
-}
-
-/* Columnas tipo malla curricular */
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* CURSO BASE (NO TACHADO) */
-.curso {
-  background: #f6c1d1; /* rosado claro */
-  padding: 14px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.25s;
-  font-weight: 500;
-}
-
-/* Hover */
-.curso:hover {
-  transform: scale(1.02);
-}
-
-/* CRÉDITOS */
-.creditos {
-  font-size: 0.85rem;
-  opacity: 0.85;
-  margin-top: 5px;
-}
-
-/* CURSO REALIZADO (TACHADO) */
-.curso.aprobado {
-  background: #b79ad8; /* moradito */
-  color: #2e1a47;
-  text-decoration: line-through;
-  opacity: 0.9;
-}
-/* CONTENEDOR GENERAL DE CICLOS */
+/* CONTENEDOR GENERAL */
 .contenedor-ciclos {
   display: flex;
   gap: 25px;
   overflow-x: auto;
-  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
-/* CADA CICLO ES UNA COLUMNA */
+/* CADA CICLO */
 .ciclo {
-  background: transparent;
   min-width: 230px;
 }
 
-/* TÍTULO DEL CICLO */
+/* TITULO CICLO */
 .ciclo h2 {
   text-align: center;
-  margin-bottom: 15px;
-  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
-/* CURSOS DENTRO DEL CICLO */
+/* LISTA DE CURSOS */
 .grid {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* TARJETA DE CURSO */
+/* CURSO NORMAL */
 .curso {
-  background: #f6c1d1; /* rosado claro (no tachado) */
+  background: #f6c1d1;
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.25s;
-  font-size: 0.9rem;
+  transition: 0.2s;
 }
 
-/* CURSO REALIZADO */
+/* CURSO HECHO */
 .curso.aprobado {
-  background: #b79ad8; /* moradito */
-  color: #2e1a47;
+  background: #b79ad8;
   text-decoration: line-through;
 }
 
-/* CRÉDITOS */
+/* CREDITOS */
 .creditos {
   font-size: 0.75rem;
-  margin-top: 4px;
   opacity: 0.85;
+  margin-top: 4px;
 }
