@@ -1,79 +1,65 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   background: #f7c6b4; /* golden rosa */
-  padding: 20px;
+  padding: 30px;
 }
 
+/* Título */
 h1 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
-.ciclo {
-  margin-bottom: 35px;
-}
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.curso {
-  padding: 15px;
-  border-radius: 14px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-}
-
-/* COLORES */
-.general {
-  background: #dff2ff; /* celeste bebé */
-}
-
-.especifico {
-  background: #f1e1ff; /* lila */
-}
-
-.especialidad {
-  background: #ffdce5; /* rosado claro */
-}
-
-.creditos {
-  margin-top: 8px;
-  font-size: 0.85rem;
-  font-weight: bold;
-}
-
-/* Curso aprobado (tachado) */
-.aprobado {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-#creditos-acumulados {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
-
-/* Mantener legible cuando está aprobado */
-.aprobado {
-  text-decoration: line-through;
-  opacity: 0.7;
-}
-
-#porcentaje-avance {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
-
+/* Créditos y porcentaje */
 #creditos-acumulados,
 #porcentaje-avance {
   text-align: center;
   font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+/* Ciclos */
+.ciclo {
+  margin-bottom: 35px;
+}
+
+.ciclo h2 {
+  margin-bottom: 15px;
+}
+
+/* Columnas tipo malla curricular */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* CURSO BASE (NO TACHADO) */
+.curso {
+  background: #f6c1d1; /* rosado claro */
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 500;
+}
+
+/* Hover */
+.curso:hover {
+  transform: scale(1.02);
+}
+
+/* CRÉDITOS */
+.creditos {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-top: 5px;
+}
+
+/* CURSO REALIZADO (TACHADO) */
+.curso.aprobado {
+  background: #b79ad8; /* moradito */
+  color: #2e1a47;
+  text-decoration: line-through;
+  opacity: 0.9;
 }
