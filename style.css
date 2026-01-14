@@ -52,12 +52,19 @@ h1 {
 
 .curso {
   background: #f6c1d1;
-  padding: 12px;
-  border-radius: 12px;
+  padding: 18px;              /* MÁS ESPACIO INTERNO */
+  border-radius: 16px;        /* MÁS REDONDEADO */
   cursor: pointer;
   font-family: 'Playwrite CO Guides', cursive;
-  transition: background 0.35s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  font-size: 1.05rem;         /* LETRA MÁS GRANDE */
+  line-height: 1.4;           /* MEJOR LECTURA */
+
+  transition:
+    background 0.35s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
 
 .curso:hover {
   transform: scale(1.02);
@@ -73,8 +80,10 @@ h1 {
 
 .creditos {
   font-family: 'Tropical Luge', 'Tilt Neon', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+  margin-top: 6px;
 }
+
 
 /* 📱 RESPONSIVE */
 @media (max-width: 768px) {
