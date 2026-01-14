@@ -56,3 +56,18 @@ h1 {
   font-size: 1.1rem;
   margin-bottom: 30px;
 }
+
+.curso {
+  transform: rotate(-2deg);
+  transition: 0.3s;
+}
+
+.curso:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* Mantener legible cuando está aprobado */
+.aprobado {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
