@@ -1,19 +1,18 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f3e1dc;
-  padding: 30px;
+  padding: 25px;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 10px;
 }
 
 #creditos-acumulados,
 #porcentaje-avance {
   text-align: center;
-  font-weight: 600;
-  margin: 6px 0;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 /* CONTENEDOR GENERAL */
@@ -21,20 +20,45 @@ h1 {
   display: flex;
   gap: 25px;
   overflow-x: auto;
-  padding-top: 25px;
+  padding-top: 20px;
 }
 
-/* TARJETA DEL CICLO (MARCO) */
+/* CADA CICLO */
 .ciclo {
   min-width: 230px;
-  background: #f9e9e4;
-  border-radius: 16px;
-  padding: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
-/* TITULO DEL CICLO */
+/* TITULO CICLO */
 .ciclo h2 {
   text-align: center;
-  margin-bottom: 12px;
-  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* LISTA DE CURSOS */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* CURSO NORMAL */
+.curso {
+  background: #f6c1d1;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* CURSO HECHO */
+.curso.aprobado {
+  background: #b79ad8;
+  text-decoration: line-through;
+}
+
+/* CREDITOS */
+.creditos {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin-top: 4px;
+}
