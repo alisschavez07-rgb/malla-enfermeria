@@ -5,7 +5,7 @@ const creditosTexto = document.getElementById("creditos-acumulados");
 const aprobadosGuardados = JSON.parse(localStorage.getItem("cursosAprobados")) || [];
 
 cursos.forEach(curso => {
-  if (aprobadosGuardados.includes(curso.innerText)) {
+  if (aprobadosGuardados.includes(curso.innerText.trim())) {
     curso.classList.add("aprobado");
   }
 
@@ -20,7 +20,7 @@ function guardarEstado() {
   const aprobados = [];
   cursos.forEach(curso => {
     if (curso.classList.contains("aprobado")) {
-      aprobados.push(curso.innerText);
+      aprobados.push(curso.innerText.trim());
     }
   });
   localStorage.setItem("cursosAprobados", JSON.stringify(aprobados));
@@ -29,13 +29,13 @@ function guardarEstado() {
 function actualizarCreditos() {
   let total = 0;
 
-  document.querySelectorAll(".curso.aprobado .creditos").forEach(c => {
-    const numero = parseInt(c.innerText);
-    total += numero;
+  document.querySelectorAll(".curso.aprobado").forEach(curso => {
+    const creditos = parseInt(curso.dataset.creditos);
+    total += creditos;
   });
 
   creditosTexto.innerText = `Créditos acumulados: ${total}`;
 }
 
-// Calcular al cargar la página
+// Calcular al cargar
 actualizarCreditos();
