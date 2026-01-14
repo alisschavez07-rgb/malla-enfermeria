@@ -43,3 +43,8 @@ h1 {
   font-size: 0.85rem;
   font-weight: bold;
 }
+/* Curso aprobado (tachado) */
+.aprobado {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
