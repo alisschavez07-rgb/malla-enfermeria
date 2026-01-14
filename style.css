@@ -1,6 +1,6 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #f7c6b4; /* golden rosa */
+  background: #f3e1dc; /* fondo como la foto */
   padding: 30px;
 }
 
@@ -62,4 +62,55 @@ h1 {
   color: #2e1a47;
   text-decoration: line-through;
   opacity: 0.9;
+}
+/* CONTENEDOR GENERAL DE CICLOS */
+.contenedor-ciclos {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+/* CADA CICLO ES UNA COLUMNA */
+.ciclo {
+  background: transparent;
+  min-width: 230px;
+}
+
+/* TÍTULO DEL CICLO */
+.ciclo h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* CURSOS DENTRO DEL CICLO */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* TARJETA DE CURSO */
+.curso {
+  background: #f6c1d1; /* rosado claro (no tachado) */
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 0.9rem;
+}
+
+/* CURSO REALIZADO */
+.curso.aprobado {
+  background: #b79ad8; /* moradito */
+  color: #2e1a47;
+  text-decoration: line-through;
+}
+
+/* CRÉDITOS */
+.creditos {
+  font-size: 0.75rem;
+  margin-top: 4px;
+  opacity: 0.85;
 }
