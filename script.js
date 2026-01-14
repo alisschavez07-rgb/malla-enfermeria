@@ -3,10 +3,10 @@ const creditosTexto = document.getElementById("creditos-acumulados");
 const porcentajeTexto = document.getElementById("porcentaje-avance");
 
 const totalCursos = cursos.length;
-const aprobadosGuardados = JSON.parse(localStorage.getItem("cursosAprobados")) || [];
+const guardados = JSON.parse(localStorage.getItem("cursosAprobados")) || [];
 
 cursos.forEach(curso => {
-  if (aprobadosGuardados.includes(curso.innerText.trim())) {
+  if (guardados.includes(curso.innerText.trim())) {
     curso.classList.add("aprobado");
   }
 
@@ -28,17 +28,17 @@ function guardar() {
 }
 
 function actualizar() {
-  let totalCreditos = 0;
+  let creditos = 0;
   let aprobados = 0;
 
   cursos.forEach(c => {
     if (c.classList.contains("aprobado")) {
       aprobados++;
-      totalCreditos += parseInt(c.dataset.creditos);
+      creditos += parseInt(c.dataset.creditos);
     }
   });
 
-  creditosTexto.innerText = `Créditos acumulados: ${totalCreditos}`;
+  creditosTexto.innerText = `Créditos acumulados: ${creditos}`;
   porcentajeTexto.innerText = `Avance: ${Math.round((aprobados / totalCursos) * 100)}%`;
 }
 
