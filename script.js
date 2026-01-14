@@ -2,10 +2,9 @@ const cursos = document.querySelectorAll(".curso");
 const creditosTexto = document.getElementById("creditos-acumulados");
 const porcentajeTexto = document.getElementById("porcentaje-avance");
 
-// Total de cursos
 const totalCursos = cursos.length;
 
-// Cargar cursos aprobados
+// Cargar cursos guardados
 const aprobadosGuardados = JSON.parse(localStorage.getItem("cursosAprobados")) || [];
 
 cursos.forEach(curso => {
@@ -45,6 +44,6 @@ function actualizarPorcentaje() {
   porcentajeTexto.innerText = `Avance: ${porcentaje}%`;
 }
 
-// Inicializar al cargar
+// Inicializar
 actualizarCreditos();
 actualizarPorcentaje();
