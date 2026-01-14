@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ciclo {
+  margin-bottom: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 15px;
+}
+
+.curso {
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+/* COLORES */
+.general {
+  background: #dff2ff; /* celeste bebé */
+}
+
+.especifico {
+  background: #f1e1ff; /* lila */
+}
+
+.especialidad {
+  background: #ffdce5; /* rosado claro */
+}
+
+.creditos {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
