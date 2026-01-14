@@ -3,8 +3,6 @@ const creditosTexto = document.getElementById("creditos-acumulados");
 const porcentajeTexto = document.getElementById("porcentaje-avance");
 
 const totalCursos = cursos.length;
-
-// Cargar cursos guardados
 const aprobadosGuardados = JSON.parse(localStorage.getItem("cursosAprobados")) || [];
 
 cursos.forEach(curso => {
@@ -14,36 +12,34 @@ cursos.forEach(curso => {
 
   curso.addEventListener("click", () => {
     curso.classList.toggle("aprobado");
-    guardarEstado();
-    actualizarCreditos();
-    actualizarPorcentaje();
+    guardar();
+    actualizar();
   });
 });
 
-function guardarEstado() {
+function guardar() {
   const aprobados = [];
-  cursos.forEach(curso => {
-    if (curso.classList.contains("aprobado")) {
-      aprobados.push(curso.innerText.trim());
+  cursos.forEach(c => {
+    if (c.classList.contains("aprobado")) {
+      aprobados.push(c.innerText.trim());
     }
   });
   localStorage.setItem("cursosAprobados", JSON.stringify(aprobados));
 }
 
-function actualizarCreditos() {
-  let total = 0;
-  document.querySelectorAll(".curso.aprobado").forEach(curso => {
-    total += parseInt(curso.dataset.creditos);
+function actualizar() {
+  let totalCreditos = 0;
+  let aprobados = 0;
+
+  cursos.forEach(c => {
+    if (c.classList.contains("aprobado")) {
+      aprobados++;
+      totalCreditos += parseInt(c.dataset.creditos);
+    }
   });
-  creditosTexto.innerText = `Créditos acumulados: ${total}`;
+
+  creditosTexto.innerText = `Créditos acumulados: ${totalCreditos}`;
+  porcentajeTexto.innerText = `Avance: ${Math.round((aprobados / totalCursos) * 100)}%`;
 }
 
-function actualizarPorcentaje() {
-  const aprobados = document.querySelectorAll(".curso.aprobado").length;
-  const porcentaje = Math.round((aprobados / totalCursos) * 100);
-  porcentajeTexto.innerText = `Avance: ${porcentaje}%`;
-}
-
-// Inicializar
-actualizarCreditos();
-actualizarPorcentaje();
+actualizar();
