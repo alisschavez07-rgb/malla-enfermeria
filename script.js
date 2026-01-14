@@ -1,7 +1,7 @@
-// Selecciona todos los cursos
 const cursos = document.querySelectorAll(".curso");
+const creditosTexto = document.getElementById("creditos-acumulados");
 
-// Cargar cursos aprobados guardados
+// Cargar cursos aprobados
 const aprobadosGuardados = JSON.parse(localStorage.getItem("cursosAprobados")) || [];
 
 cursos.forEach(curso => {
@@ -12,6 +12,7 @@ cursos.forEach(curso => {
   curso.addEventListener("click", () => {
     curso.classList.toggle("aprobado");
     guardarEstado();
+    actualizarCreditos();
   });
 });
 
@@ -24,3 +25,17 @@ function guardarEstado() {
   });
   localStorage.setItem("cursosAprobados", JSON.stringify(aprobados));
 }
+
+function actualizarCreditos() {
+  let total = 0;
+
+  document.querySelectorAll(".curso.aprobado .creditos").forEach(c => {
+    const numero = parseInt(c.innerText);
+    total += numero;
+  });
+
+  creditosTexto.innerText = `Créditos acumulados: ${total}`;
+}
+
+// Calcular al cargar la página
+actualizarCreditos();
